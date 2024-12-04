@@ -63,11 +63,17 @@ You can test the generate native executable using:
 
 ## Generating a Docker image with JVM
 
-You can create a Docker image using:
+You can create a Docker image with JVM using:
 ```shell script
 ./mvnw package -Dquarkus.container-image.build=true -Dquarkus.container-image.tag=jvm
 ```
 
+## Generating a Docker image with native binary executable
+
+You can create a Docker image with native binary executable using:
+```shell script
+./mvnw package -Dquarkus.container-image.build=true -Dquarkus.container-image.tag=native -Dquarkus.package.type=native
+```
 
 ## Related Guides
 
