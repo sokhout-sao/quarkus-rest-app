@@ -53,6 +53,14 @@ You can then execute your native executable with: `./target/rest-app-1.0.0-runne
 
 If you want to learn more about building native executables, please consult <https://quarkus.io/guides/maven-tooling>.
 
+## Testing the generate native executable
+
+You can test the generate native executable using:
+
+```shell script
+./mvnw verify -Pnative
+```
+
 ## Related Guides
 
 - RESTEasy Classic JSON-B ([guide](https://quarkus.io/guides/rest-json)): JSON-B serialization support for RESTEasy Classic

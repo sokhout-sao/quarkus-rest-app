@@ -1,7 +1,9 @@
 package com.cocodeur.quarkus.rest;
 
 import io.quarkus.test.junit.QuarkusTest;
+import jakarta.inject.Inject;
 import jakarta.ws.rs.core.Response;
+import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
@@ -12,6 +14,10 @@ import static org.hamcrest.Matchers.is;
 
 @QuarkusTest
 class BooksResourceTest {
+    protected String getExpectedGenre() {
+        return "IT";
+    }
+
     @Test
     void shouldGetAllBooks() {
         given()
@@ -46,7 +52,7 @@ class BooksResourceTest {
                 .body("title", is("Clean Code"))
                 .body("author", is("Robert C. Martin"))
                 .body("yearOfPublication", is(2008))
-                .body("genre", is("IT"))
+                .body("genre", is(getExpectedGenre()))
         ;
     }
 
