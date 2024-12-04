@@ -61,6 +61,14 @@ You can test the generate native executable using:
 ./mvnw verify -Pnative
 ```
 
+## Generating a Docker image with JVM
+
+You can create a Docker image using:
+```shell script
+./mvnw package -Dquarkus.container-image.build=true -Dquarkus.container-image.tag=jvm
+```
+
+
 ## Related Guides
 
 - RESTEasy Classic JSON-B ([guide](https://quarkus.io/guides/rest-json)): JSON-B serialization support for RESTEasy Classic
